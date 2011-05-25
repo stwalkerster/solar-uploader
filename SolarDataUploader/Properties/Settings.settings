@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SolarDataUploader.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="dbHost" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dbmaster.helpmebot.org.uk</Value>
+    </Setting>
+    <Setting Name="dbPort" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">3306</Value>
+    </Setting>
+    <Setting Name="dbUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)">solar</Value>
+    </Setting>
+    <Setting Name="dbPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">nYf33XcdDt5EJP5P</Value>
+    </Setting>
+    <Setting Name="dbSchema" Type="System.String" Scope="User">
+      <Value Profile="(Default)">solar</Value>
+    </Setting>
+    <Setting Name="settingsLocked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
