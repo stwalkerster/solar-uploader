@@ -10,24 +10,30 @@ namespace SolarDataUploader
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Database connection object
+        /// </summary>
         private MySqlConnection _conn;
 
+        /// <summary>
+        /// Creates a new instance of the dialog
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
-            comboBox1.Enabled = !checkBox1.Checked;
-            button1.Enabled = !checkBox1.Checked;
+            comboBoxSchema.Enabled = !checkBox1.Checked;
+            buttonDbTest.Enabled = !checkBox1.Checked;
             reopenDatabase();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonDbTest_Click(object sender, EventArgs e)
         {
             reopenDatabase();
-            comboBox1.Items.Clear();
+            comboBoxSchema.Items.Clear();
             MySqlDataReader dr = new MySqlCommand("SHOW DATABASES;", _conn).ExecuteReader();
             while(dr.Read())
             {
-                comboBox1.Items.Add(dr.GetString(0));
+                comboBoxSchema.Items.Add(dr.GetString(0));
             }
             dr.Close();
         }
@@ -54,17 +60,17 @@ namespace SolarDataUploader
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            comboBox1.Enabled = !checkBox1.Checked;
-            button1.Enabled = !checkBox1.Checked;
+            comboBoxSchema.Enabled = !checkBox1.Checked;
+            buttonDbTest.Enabled = !checkBox1.Checked;
         }
         Dictionary<DateTime, float> data = new Dictionary<DateTime, float>();
         float gen = 0;
         DateTime date = DateTime.MinValue;
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonDatafileBrowse_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() != DialogResult.OK) return;
 
-            label6.Text = openFileDialog1.FileName;
+            labelFileName.Text = openFileDialog1.FileName;
             
             try
             {
@@ -78,10 +84,10 @@ namespace SolarDataUploader
             label8.Text = string.Format("On {0}, {1} kWh was generated.", date, gen);
             
 
-            chart1.Series[0].Points.Clear();
+            chartDataVisualiser.Series[0].Points.Clear();
             foreach (KeyValuePair<DateTime, float> keyValuePair in data)
             {
-                chart1.Series[0].Points.AddXY(keyValuePair.Key, keyValuePair.Value);
+                chartDataVisualiser.Series[0].Points.AddXY(keyValuePair.Key, keyValuePair.Value);
             }
             groupBox3.Visible = true;
 
@@ -120,9 +126,9 @@ namespace SolarDataUploader
             return dataDict;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonSave_Click(object sender, EventArgs e)
         {
-            _conn.ChangeDatabase(comboBox1.Text);
+            _conn.ChangeDatabase(comboBoxSchema.Text);
 
             MySqlTransaction t =  _conn.BeginTransaction(IsolationLevel.Serializable);
             try
@@ -149,6 +155,11 @@ namespace SolarDataUploader
             {
                 t.Rollback();
             }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
