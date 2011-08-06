@@ -5,7 +5,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using Utility.Interaction.TaskWorker;
 namespace SolarDataUploader
 {
     public partial class Form1 : Form
@@ -128,6 +128,12 @@ namespace SolarDataUploader
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            WorkerTask t = new WorkerTask("Saving data...", wTaskDoSave);
+            Worker.getInstance().DoWork(t);
+        }
+
+        private void wTaskDoSave(object nothing)
+        {
             _conn.ChangeDatabase(comboBoxSchema.Text);
 
             MySqlTransaction t =  _conn.BeginTransaction(IsolationLevel.Serializable);
@@ -157,9 +163,10 @@ namespace SolarDataUploader
             }
         }
 
+
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }
-    }
+    }   
 }
