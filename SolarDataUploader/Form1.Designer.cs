@@ -225,7 +225,8 @@
             // 
             // buttonDatafileBrowse
             // 
-            this.buttonDatafileBrowse.Location = new System.Drawing.Point(401, 17);
+            this.buttonDatafileBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDatafileBrowse.Location = new System.Drawing.Point(407, 17);
             this.buttonDatafileBrowse.Name = "buttonDatafileBrowse";
             this.buttonDatafileBrowse.Size = new System.Drawing.Size(75, 23);
             this.buttonDatafileBrowse.TabIndex = 9;
@@ -235,30 +236,37 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.labelFileName);
             this.groupBox2.Controls.Add(this.buttonDatafileBrowse);
             this.groupBox2.Location = new System.Drawing.Point(351, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(482, 49);
+            this.groupBox2.Size = new System.Drawing.Size(488, 49);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data File";
             // 
             // labelFileName
             // 
+            this.labelFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFileName.Location = new System.Drawing.Point(6, 22);
             this.labelFileName.Name = "labelFileName";
-            this.labelFileName.Size = new System.Drawing.Size(389, 17);
+            this.labelFileName.Size = new System.Drawing.Size(395, 17);
             this.labelFileName.TabIndex = 10;
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.buttonSave);
             this.groupBox3.Controls.Add(this.chartDataVisualiser);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Location = new System.Drawing.Point(351, 67);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(482, 254);
+            this.groupBox3.Size = new System.Drawing.Size(488, 315);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Statistics";
@@ -267,7 +275,8 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(305, 19);
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.Location = new System.Drawing.Point(311, 286);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(171, 23);
             this.buttonSave.TabIndex = 3;
@@ -277,6 +286,9 @@
             // 
             // chartDataVisualiser
             // 
+            this.chartDataVisualiser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.AxisX.Title = "Time of Day";
             chartArea1.AxisY.Title = "Generated";
             chartArea1.Name = "ChartArea1";
@@ -289,7 +301,7 @@
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chartDataVisualiser.Series.Add(series1);
-            this.chartDataVisualiser.Size = new System.Drawing.Size(470, 213);
+            this.chartDataVisualiser.Size = new System.Drawing.Size(476, 245);
             this.chartDataVisualiser.TabIndex = 2;
             this.chartDataVisualiser.Text = "chart1";
             // 
@@ -314,7 +326,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 333);
+            this.ClientSize = new System.Drawing.Size(851, 394);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
